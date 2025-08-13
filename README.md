@@ -142,7 +142,7 @@ Before you can run the code, you need a free MQTT broker to handle messages.
 4.  **Monitor the Data**:
     -   The ESP8266 will begin publishing sensor data, which will appear in your Python console in real-time.
     -   
-[▶️ Watch a Demonstration Video](https://your-video-link-here.com)
+[▶️ Watch a Demonstration Video](https://drive.google.com/file/d/17krifS6K_uvakduxZT-LT-FsaElfaJ5a/view?usp=sharing)
 
 ---
 
