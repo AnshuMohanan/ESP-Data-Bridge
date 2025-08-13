@@ -1,4 +1,4 @@
-# 📡 ESP8266 MQTT Data Bridge
+# 📡 ESP Data Bridge
 
 [![Arduino IDE](https://img.shields.io/badge/Arduino-ESP8266-00979D?style=for-the-badge&logo=arduino)](https://www.arduino.cc/) [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python)](https://www.python.org/) [![MQTT](https://img.shields.io/badge/MQTT-Broker-660066?style=for-the-badge&logo=mqtt)](https://mqtt.org/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
