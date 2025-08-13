@@ -65,57 +65,88 @@ The system operates in a simple yet effective client-server model using an MQTT 
 
 ---
 
-## Hardware and Software
-
-### Hardware
--   An ESP8266-based board (e.g., NodeMCU, Wemos D1 Mini)
--   Any sensor you wish to use (the example uses an HC-SR04 Ultrasonic Sensor)
--   Breadboard and jumper wires
-
-### Software & Libraries
--   **ESP8266/Arduino:**
-    -   [Arduino IDE](https://www.arduino.cc/en/software) with the ESP8266 board manager installed.
-    -   `PubSubClient` library by Nick O'Leary
-    -   `ESP8266WiFi` library (included with the ESP8266 core)
--   **Python Receiver:**
-    -   [Python](https://www.python.org/downloads/) (3.8 or newer)
-    -   `paho-mqtt` library
-
----
-
 ## Getting Started
 
-### ESP8266 Setup
+Follow these steps to set up the MQTT broker, the ESP8266 transmitter, and the Python receiver.
 
-1.  **Configure the Code**: Open `data_transfer.ino` in the Arduino IDE. All MQTT credentials and topics are already defined in this file. You can modify them here if you are using a different broker.
+### Prerequisites
+
+#### Hardware
+* An ESP8266-based board (e.g., NodeMCU, Wemos D1 Mini)
+* Any sensor you wish to connect
+
+#### Software
+* [Arduino IDE](https://www.arduino.cc/en/software) with the ESP8266 board manager installed.
+* **Arduino Libraries**:
+    * `PubSubClient` (can be installed via the Library Manager)
+* [Python](https://www.python.org/downloads/) (3.8 or newer)
+* **Python Packages**:
+    * `paho-mqtt`
+  
+### Installation & Setup
+
+1. Clone the Repository
+```sh
+git clone [https://github.com/AnshuMohanan/ESP-Data-Bridge.git](https://github.com/AnshuMohanan/ESP-Data-Bridge.git)
+cd ESP-Data-Bridge
+```
+
+#### Set Up Your MQTT Broker
+
+Before you can run the code, you need a free MQTT broker to handle messages.
+
+1.  **Create an Account**: Go to [HiveMQ Cloud](https://www.hivemq.com/mqtt-cloud-broker/) and sign up.
+2.  **Create a Cluster**: Follow their instructions to create a new, free cluster.
+3.  **Get Your Credentials**: In your cluster's "Access Management" or "Credentials" section, get the following:
+    * **Server URL** (e.g., `your-id.s1.eu.hivemq.cloud`)
+    * **Port** (e.g., `8883`)
+    * **Username**
+    * **Password**
+
+#### ESP8266 Setup
+
+1.  **Update Credentials**: Open `transmitter/data_transfer.ino` in the Arduino IDE. Replace the placeholder values with **your own HiveMQ credentials** from Step 1.
 2.  **Install Libraries**: In the Arduino IDE, go to **Sketch > Include Library > Manage Libraries...** and install `PubSubClient`.
-3.  **Upload the Code**: Connect your ESP8266 board, select the correct board and COM port, and upload the `data_transfer.ino` sketch.
-4.  **Connect to Wi-Fi**: Open the Serial Monitor (baud rate 115200). The ESP8266 will prompt you to enter the SSID and password for your Wi-Fi network. It will save these credentials to its memory.
+3.  **Upload the Code**: Connect your ESP8266, select the correct board and COM port, and upload the sketch.
+4.  **Connect to Wi-Fi**: Open the Serial Monitor (baud rate 115200). The ESP8266 will prompt you to enter the SSID and password for your Wi-Fi network.
 
-### Python Receiver Setup
+#### Python Receiver Setup 
 
-1.  **Clone the repository (if you haven't already):**
+1.  **Navigate to the Receiver Directory:**
     ```sh
-    git clone [https://github.com/your-username/your-project-name.git](https://github.com/your-username/your-project-name.git)
-    cd your-project-name
+    cd receiver
     ```
-2.  **Install the MQTT library:**
+2.  **Install MQTT Library:**
     ```sh
     pip install paho-mqtt
     ```
-3.  **Check Credentials**: Ensure the MQTT credentials in `final_receiver_ultrasonic.py` match those in the ESP8266 code.
+3.  **Update Credentials**: Open `receiver/final_receiver_ultrasonic.py`. Replace the placeholder values with **your own HiveMQ credentials**, ensuring they match the ESP8266 code.
 
 ---
 
 ## Usage
 
-1.  Power on your ESP8266. It should automatically connect to your Wi-Fi and the MQTT broker. The on-board LEDs will indicate the connection status.
-2.  Run the Python receiver script from your terminal:
-    ```sh
-    python final_receiver_ultrasonic.py
-    ```
-3.  The script will connect to the broker and prompt you for a command. Type `start` and press Enter.
-4.  The ESP8266 will receive the command and begin publishing sensor data. You will see the data appear in your Python console in real-time.
+1.  **Power On and First-Time Setup**:
+    -   Power on your ESP8266 while it's connected to your computer.
+    -   Open the **Serial Monitor** in the Arduino IDE (Baud Rate: 115200).
+    -   The ESP8266 will not find any saved credentials and search for the wifi and will show every SSID available and will prompt you to enter the **Password** for your network.
+    -   Once you enter the credentials, the device will save them and connect automatically.
+
+2.  **Normal Operation**:
+    -   On subsequent power-ups, the ESP8266 will automatically connect to the saved Wi-Fi network and the MQTT broker. The on-board LEDs will light up to indicate a successful connection.
+
+3.  **Run the Python Receiver**:
+    -   Navigate to the `receiver` folder in your terminal and run the Python script:
+        ```sh
+        cd path/to/your/project/receiver
+        python final_receiver_ultrasonic.py
+        ```
+    -   When prompted, type `start` and press Enter.
+
+4.  **Monitor the Data**:
+    -   The ESP8266 will begin publishing sensor data, which will appear in your Python console in real-time.
+    -   
+[▶️ Watch a Demonstration Video](https://your-video-link-here.com)
 
 ---
 
