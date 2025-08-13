@@ -5,12 +5,12 @@ import time
 import sys
 
 # --- MQTT CREDENTIALS (should match your ESP8266) ---
-MQTT_BROKER = "d2030e1fd8da4f139d685c7323568db6.s1.eu.hivemq.cloud"
-MQTT_PORT = 8883
-MQTT_USER = "MAJOR_PROJECT"
-MQTT_PASS = "Majorproject27567"
-MQTT_DATA_TOPIC = "crackmonitor/data"      # Topic for receiving sensor data
-MQTT_CONTROL_TOPIC = "crackmonitor/control" # NEW: Topic for sending commands
+MQTT_BROKER = "*************************"
+MQTT_PORT = ****
+MQTT_USER = "***************************"
+MQTT_PASS = "***************************"
+MQTT_DATA_TOPIC = "*********************"      # Topic for receiving sensor data
+MQTT_CONTROL_TOPIC = "******************" # NEW: Topic for sending commands
 # ----------------------------------------------------
 
 # The callback for when the client connects.
@@ -87,4 +87,5 @@ try:
 except KeyboardInterrupt:
     print("\nExiting...")
     client.loop_stop()
+
     client.disconnect()
