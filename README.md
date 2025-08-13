@@ -13,6 +13,7 @@ A robust framework for the ESP8266 to wirelessly transmit any sensor data over W
 - [System Architecture](#system-architecture)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
+  - [Hardware Setup & Circuit](#Hardware-Setup---Circuit)
   - [Installation & Setup](#installation--setup)
 - [Usage](#usage)
 - [Code Structure](#code-structure)
@@ -78,6 +79,25 @@ Follow these steps to set up the MQTT broker, the ESP8266 transmitter, and the P
 * [Python](https://www.python.org/downloads/) (3.8 or newer)
 * **Python Packages**:
     * `paho-mqtt`
+
+---
+
+## Hardware Setup & Circuit
+
+Before running the code, you need to wire the components correctly. The example uses an HC-SR04 ultrasonic sensor, but you can adapt the connections for your specific sensor.
+
+**Connect your components as shown in the table below:**
+
+| Pin (Sensor) | Pin (ESP8266) | Purpose       |
+|--------------|---------------|---------------|
+| VCC          | Vin (5V)      | Power         |
+| GND          | GND           | Ground        |
+| Trig         | D1 (GPIO 5)   | Trigger Pulse |
+| Echo         | D2 (GPIO 4)   | Echo Return   |
+
+*Note: Double-check your pin numbers in the circuit diagram located in the demonstration folder .*
+
+---
   
 ### Installation & Setup
 
