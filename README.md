@@ -11,20 +11,17 @@ A robust framework for the ESP8266 to wirelessly transmit any sensor data over W
 
 ## Table of Contents
 
-- [About The Project](#About-The-Project)
-- [Key Features](#Key-Features)
-- [System Architecture](#System-Architecture)
-- [Hardware and Software](#Hardware-and-Software)
-- [Getting Started](#Getting-Started)
+- [About The Project](#about-the-project)
+- [Key Features](#key-features)
+- [System Architecture](#system-architecture)
+- [Hardware and Software](#hardware-and-software)
+- [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
-  - [Mode 1: Batch Processing](#mode-1-batch-processing)
-  - [Mode 2: Real-Time Simulation](#mode-2-real-time-simulation)
-- [Technologies Used](#technologies-used)
+- [Code Structure](#code-structure)
 - [License](#license)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgments)
+
 ---
 
 ## About The Project
@@ -65,7 +62,6 @@ The system operates in a simple yet effective client-server model using an MQTT 
     -   The ESP8266 receives the "start" message, activates its monitoring loop, and begins reading sensor data.
     -   It formats the data into a JSON payload (e.g., `{"distance_cm": 25}`) and publishes it to the `crackmonitor/data` topic.
     -   The Python client receives the JSON data and prints it to the console.
-
 
 ---
 
