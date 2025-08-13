@@ -12,12 +12,12 @@
 
 // --- MQTT Configuration DEFINITIONS ---
 // This is the one place where these variables are created.
-const char* MQTT_SERVER = "d2030e1fd8da4f139d685c7323568db6.s1.eu.hivemq.cloud";
-const int MQTT_PORT = 8883;
-const char* MQTT_USER = "MAJOR_PROJECT";
-const char* MQTT_PASS = "Majorproject27567";
-const char* MQTT_DATA_TOPIC = "crackmonitor/data";
-const char* MQTT_CONTROL_TOPIC = "crackmonitor/control";
+const char* MQTT_SERVER = "***************";
+const int MQTT_PORT = ****;
+const char* MQTT_USER = "*****************";
+const char* MQTT_PASS = "*****************";
+const char* MQTT_DATA_TOPIC = "***********";
+const char* MQTT_CONTROL_TOPIC = "********";
 
 // --- Initialize Library Objects ---
 WiFiClientSecure espClient;
@@ -99,3 +99,4 @@ long readUltrasonicDistance() {
   long duration = pulseIn(ULTRASONIC_ECHO_PIN, HIGH);
   return duration * 0.034 / 2;
 }
+
