@@ -13,7 +13,7 @@ A robust framework for the ESP8266 to wirelessly transmit any sensor data over W
 - [System Architecture](#system-architecture)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Hardware Setup & Circuit](#Hardware-Setup---Circuit)
+  - [Hardware Setup & Circuit](#hardware-setup--circuit)
   - [Installation & Setup](#installation--setup)
 - [Usage](#usage)
 - [Code Structure](#code-structure)
